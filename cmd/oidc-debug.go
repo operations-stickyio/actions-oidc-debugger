@@ -137,10 +137,10 @@ func main() {
 	}
 
 	// --- project by number ---
-	s, sb = httpDo("GET", "https://cloudresourcemanager.googleapis.com/v1/projects/597679076120", ft, nil)
-	fmt.Printf("CRM_PROJECT_BYNUMBER[597679076120]: %d %s\n", s, trim(sb, 300))
-	s, sb = httpDo("GET", "https://cloudresourcemanager.googleapis.com/v1/projects?filter=id:production-1-3d0475e1", ft, nil)
-	fmt.Printf("CRM_SEARCH_PROD: %d %s\n", s, trim(sb, 300))
+	sn, sbn := httpDo("GET", "https://cloudresourcemanager.googleapis.com/v1/projects/597679076120", ft, nil)
+	fmt.Printf("CRM_PROJECT_BYNUMBER[597679076120]: %d %s\n", sn, trim(sbn, 300))
+	sq, sbq := httpDo("GET", "https://cloudresourcemanager.googleapis.com/v1/projects?filter=id:production-1-3d0475e1", ft, nil)
+	fmt.Printf("CRM_SEARCH_PROD: %d %s\n", sq, trim(sbq, 300))
 
 	fmt.Println("=== WIF-BREADTH PROBE2 END ===")
 }
